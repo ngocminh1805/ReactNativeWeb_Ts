@@ -18,21 +18,31 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules\/(?!()\/).*/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+      {
         test: /\.(tsx|ts|jsx|js|mjs)$/,
         exclude: /node_modules/,
         loader: 'ts-loader',
       },
-      // {
-      //   test: /\.(png|jpg|gif)$/i,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         limit: 8192,
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [

@@ -9,9 +9,11 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "build:web": "cd web && webpack"
+    "build:web": "cd web && webpack",
+    "clean": "rm -rf node_modules && yarn cache clean && npm cache clean --force"
   },
   "dependencies": {
+    "@react-native-community/cli": "^4.13.1",
     "react": "16.13.1",
     "react-dom": "^17.0.1",
     "react-native": "0.63.3",
@@ -20,12 +22,15 @@
     "webpack-serve": "^3.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
     "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.37",
     "babel-jest": "^25.1.0",
+    "babel-loader": "^8.2.2",
     "eslint": "^6.5.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
