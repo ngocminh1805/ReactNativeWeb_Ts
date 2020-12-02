@@ -3,17 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "web": "cd web && webpack serve",
+    "web": " webpack serve",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint .",
     "build:web": "cd web && webpack",
     "clean": "rm -rf node_modules && yarn cache clean && npm cache clean --force"
   },
   "dependencies": {
-    "@react-native-community/cli": "^4.13.1",
     "react": "16.13.1",
     "react-dom": "^17.0.1",
     "react-native": "0.63.3",
